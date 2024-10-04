@@ -1,0 +1,32 @@
+@import "components/presentation/presentation";
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-regular.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-Extrabold";
+  src: url("./fonts/Gilroy-Extrabold.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("./fonts/Gilroy-Light.otf");
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("./fonts/Circe_Regular.otf");
+}
+
+@font-face {
+  font-family: "DINPro";
+  src: url("./fonts/DINPro.otf");
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}

@@ -1,0 +1,871 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Gilroy";
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  bottom: 13px;
+  left: 70px;
+  max-width: 57px;
+}
+
+.button {
+  font-size: 26px;
+  position: absolute;
+  letter-spacing: 1.6px;
+  font-family: "DINPro";
+  top: 304px;
+  right: 92px;
+  font-weight: 400;
+  min-width: 150px;
+  padding: 24px 30px 24px 90px;
+  background-color: #ff6a9f;
+  border: none;
+  border-radius: 45px;
+
+  &::after {
+    position: absolute;
+    left: 23px;
+    top: 50%;
+    content: "";
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #171717;
+    border-radius: 27px;
+    box-shadow:
+      -2px -2px 1px 1px #b34f79,
+      3px 2px 3px 1px #ffa6c5;
+  }
+
+  &::before {
+    position: absolute;
+    left: 38px;
+    z-index: 2;
+    top: 41%;
+    content: "";
+    background-image: url(/img/icons/arrow.png);
+    background-size: 100% auto;
+    width: 20px;
+    height: 14px;
+  }
+
+  &-plus::before {
+    content: "+";
+    background-image: none;
+    color: #fff;
+    font-size: 30px;
+    top: 19px;
+    left: 38px;
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__header {
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+  &__home-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding-top: 0;
+    padding-right: 24px;
+    margin-right: 24px;
+    border-right: 1.3px solid black;
+    width: 22px;
+    height: 22px;
+  }
+
+  &__name {
+    font-family: "Circe";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__greeting {
+    text-transform: uppercase;
+    display: block;
+    font-family: "DINPro";
+    margin-bottom: 11px;
+    font-size: 30px;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    display: inline;
+    font-size: 109px;
+    font-weight: 300;
+    letter-spacing: 6.4px;
+    text-transform: uppercase;
+    line-height: 1.073;
+    color: rgb(23, 23, 23);
+    margin-right: 75px;
+  }
+
+  &__highlight {
+    font-family: "Gilroy-Extrabold";
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  &__item {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item-scrollbar::after {
+    position: absolute;
+    content: "";
+    width: 776px;
+    height: 446px;
+    background-color: #fff;
+    border-radius: 40px;
+    top: 60%;
+    left: 119px;
+    box-shadow: 2.723px 4.193px 116.25px 8.75px rgba(157, 185, 198, 0.39);
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  &__item-scrollbar::before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 399px;
+    background-color: black;
+    border-radius: 35px;
+    bottom: -94px;
+    left: 79px;
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  &__text {
+    max-width: 940px;
+    left: 66px;
+    top: 21%;
+    position: absolute;
+  }
+
+  &__background-bacteria {
+    position: absolute;
+    animation: 15s 0s infinite alternate;
+    z-index: 1;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+  }
+
+  &__background-bacteria-pulse {
+    bottom: -50px;
+    right: 200px;
+    z-index: 3;
+    background-image: url(/img/decoration/secondBacteria.png);
+    background-size: 100% auto;
+    width: 226px;
+    height: 226px;
+    animation-name: bacteria-pulse;
+  }
+
+  &__background-bacteria-zigzag {
+    top: 50%;
+    left: 0;
+    background-image: url(/img/decoration/firstBacteria.png);
+    background-size: 100% auto;
+    width: 72px;
+    height: 72px;
+    animation-name: bacteria-zigzag;
+  }
+
+  &__background-bacteria-oval {
+    top: 25%;
+    right: 5%;
+    z-index: 4;
+    background-image: url(/img/decoration/thirdBacteria.png);
+    background-size: 100% auto;
+    animation: bacteria-oval 35s infinite linear;
+  }
+
+  &__background-bacteria-float {
+    background-image: url(/img/decoration/fourthBacteria.png);
+    top: 10%;
+    right: 18%;
+    background-size: 64% auto;
+    animation: bacteria-float 35s infinite ease-in-out;
+  }
+
+  &__item-first {
+    background-image: url(/img/background/firstBackground.png);
+  }
+
+  &__background-sperm {
+    z-index: 3;
+    top: 20%;
+    right: 0;
+    background-image: url(/img/decoration/firstSlideSperm.png);
+    background-size: 100% auto;
+    width: 590px;
+    height: 93px;
+    position: absolute;
+  }
+}
+
+.description {
+  background-repeat: no-repeat;
+  background-image: url(/img/background/secondBackground.png);
+  background-size: 100% auto;
+  width: 100vw;
+  height: 100vh;
+
+  &__title {
+    font-family: "DINPro";
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: 1.6px;
+    color: #242424;
+    position: absolute;
+    text-transform: uppercase;
+    top: 128px;
+    left: 67px;
+    max-width: 185px;
+  }
+
+  &__text {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    direction: rtl;
+    padding: 0;
+    z-index: 2;
+    left: 72px;
+    bottom: 105px;
+  }
+
+  &__text p {
+    font-family: "DINPro";
+    font-size: 23px;
+    width: 648px;
+    height: 406px;
+    margin-left: 57px;
+    padding-right: 108px;
+  }
+
+  &__text::-webkit-scrollbar {
+    width: 20px;
+    background-color: transparent;
+  }
+
+  &__text::-webkit-scrollbar-thumb {
+    background-color: #ff4a95;
+    border-radius: 20px;
+    box-shadow:
+      inset -1px -4px 7px 1px #f8c7dc,
+      inset 2px 1px 7px 3px #753457;
+  }
+
+  &__background-sperm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 500px;
+    animation: sperm-float 3s 0s ease;
+    animation-play-state: paused;
+  }
+
+  &__background-sperm-first {
+    background-image: url(/img/decoration/secondSlideSperm5.png);
+    background-size: 100% auto;
+    top: 15%;
+    right: -34%;
+  }
+
+  &__background-sperm-second {
+    background-image: url(/img/decoration/secondSlideSperm3.png);
+    background-size: 72% auto;
+    top: 10%;
+    right: -54%;
+  }
+
+  &__background-sperm-second {
+    background-image: url(/img/decoration/secondSlideSperm3.png);
+    background-size: 72% auto;
+    top: 10%;
+    right: -54%;
+  }
+
+  &__background-sperm-third {
+    background-image: url(/img/decoration/secondSlideSperm4.png);
+    background-size: 68% auto;
+    top: 53%;
+    right: -85%;
+  }
+
+  &__background-sperm-fourth {
+    background-image: url(/img/decoration/secondSlideSperm2.png);
+    background-size: 40% auto;
+    top: 6%;
+    right: -68%;
+  }
+
+  &__background-sperm-fifth {
+    background-image: url(/img/decoration/secondSlideSperm1.png);
+    background-size: 140% auto;
+    top: 67%;
+    right: -94px;
+    width: 230px;
+  }
+}
+
+.brand {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/img/background/thirdBackground.png);
+  background-size: 100% auto;
+
+  &__name {
+    text-transform: uppercase;
+    display: block;
+    font-family: "DINPro";
+    font-size: 30px;
+    padding-left: 7px;
+  }
+
+  &__top {
+    position: absolute;
+    z-index: 4;
+    top: 162px;
+    left: 91px;
+    transform: translateX(50%);
+  }
+
+  &__bg {
+    position: absolute;
+    background-color: rgb(22, 39, 62);
+    opacity: 0;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    transition: opacity 0.3s;
+  }
+
+  &__desc {
+    width: 815px;
+    height: 575px;
+    background-color: white;
+    opacity: 0;
+    transform: translate(-74%, -50%);
+    border-radius: 47px;
+    right: -53%;
+    top: 53%;
+    position: absolute;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 125px;
+    left: 238px;
+    color: #2e2e2e;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__food {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 2.723px 4.193px 116.25px 8.75px rgba(157, 185, 198, 0.39);
+    width: 270px;
+    padding: 52px 35px 66px 115px;
+    margin-right: 44px;
+    border-radius: 37px;
+  }
+
+  &__food::after {
+    position: absolute;
+    top: -28px;
+    left: 113px;
+    content: "";
+    background-image: url(/img/icons/dish.png);
+    background-size: 100% auto;
+    width: 68px;
+    height: 63px;
+  }
+
+  &__schedule {
+    position: relative;
+    box-shadow: 2.723px 4.193px 116.25px 8.75px rgba(157, 185, 198, 0.39);
+    border-radius: 37px;
+    background-color: #fff;
+    width: 150px;
+    padding: 53px 76px 42px 43px;
+    margin-bottom: 35px;
+  }
+
+  &__schedule::after {
+    position: absolute;
+    top: -19px;
+    left: 40px;
+    content: "";
+    background-image: url(/img/icons/clipboard.png);
+    background-size: 100% auto;
+    width: 70px;
+    height: 57px;
+  }
+
+  &__btn {
+    top: 189px;
+    right: 2px;
+    z-index: 3;
+  }
+
+  &__title {
+    font-size: 95px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 12px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 65px;
+    top: 52px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__close::after {
+    position: absolute;
+    content: "";
+    width: 42px;
+    height: 3px;
+    background-color: #000;
+    transform: rotate(45deg);
+  }
+
+  &__close::before {
+    position: absolute;
+    content: "";
+    width: 42px;
+    height: 3px;
+    background-color: #000;
+    transform: rotate(-45deg);
+  }
+
+  &__list {
+    position: absolute;
+    bottom: 83px;
+    left: 204px;
+    max-width: 500px;
+  }
+
+  &__number {
+    font-family: "Gilroy-Extrabold";
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #8cc9e8;
+  }
+
+  &__text {
+    font-family: "DINPro";
+  }
+
+  &__point {
+    font-size: 25px;
+    margin-bottom: 15px;
+    transition: opacity 0.2s;
+  }
+
+  &__highlight {
+    font-family: "Gilroy-Extrabold";
+  }
+
+  &__arrow {
+    z-index: 6;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1.5px solid #000;
+    bottom: 36px;
+    padding: 0;
+    transition:
+      background-color 0.4s,
+      border-color 0.4s;
+  }
+
+  &__arrow.active {
+    background-color: #fc6da9;
+    border-color: transparent;
+  }
+
+  &__arrow-right {
+    position: absolute;
+    right: 548px;
+  }
+
+  &__arrow-left {
+    position: absolute;
+    right: 70%;
+  }
+
+  &__arrow-right::after {
+    position: absolute;
+    right: -29px;
+    bottom: -2px;
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(-45deg);
+  }
+
+  &__arrow-left::after {
+    position: absolute;
+    bottom: -2px;
+    right: 25px;
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    background-image: url(/img/decoration/bottle.png);
+    background-size: 340% auto;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 768px;
+  }
+
+  &__background-bubble {
+    position: absolute;
+    z-index: 4;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    animation: 10s 0ms ease alternate infinite;
+  }
+
+  &__background-bubble-first {
+    z-index: 5;
+    top: 20%;
+    left: 18%;
+    background-image: url(/img/decoration/bubble2.png);
+    background-size: 50% auto;
+    animation-name: bubble-slow;
+  }
+
+  &__background-bubble-second {
+    top: 41%;
+    left: 185px;
+    background-image: url(/img/decoration/bubble4.png);
+    background-size: 80% auto;
+    animation-name: bubble-around;
+  }
+
+  &__background-bubble-third {
+    top: 28%;
+    left: 7%;
+    background-image: url(/img/decoration/bubble3.png);
+    background-size: 25% auto;
+    animation-name: bubble-fly;
+  }
+
+  &__background-bubble-fourth {
+    z-index: 5;
+    top: 59%;
+    left: 10px;
+    background-image: url(/img/decoration/bubble5.png);
+    background-size: 25% auto;
+    animation-name: bubble-floating;
+    animation-duration: 15s;
+  }
+
+  &__background-bubble-fifth {
+    z-index: 5;
+    top: 72%;
+    left: 23px;
+    background-image: url(/img/decoration/bubble6.png);
+    background-size: 45% auto;
+    animation-name: bubble-down;
+  }
+
+  &__background-bubble-sixth {
+    top: 77%;
+    left: 24%;
+    background-image: url(/img/decoration/bubble7.png);
+    background-size: 45% auto;
+    animation-name: bubble-up;
+    animation-duration: 15s;
+  }
+
+  &__background-bubble-seventh {
+    z-index: 5;
+    top: 91%;
+    left: 182px;
+    background-image: url(/img/decoration/bubble8.png);
+    background-size: 90% auto;
+    animation-name: bubble-around;
+  }
+
+  &__background-bubble-eighth {
+    top: 8%;
+    left: 197px;
+    background-image: url(/img/decoration/bubble1.png);
+    background-size: 25% auto;
+    animation-name: bubble-fly;
+  }
+}
+
+@keyframes bubble-fly {
+  0% {
+    opacity: 0;
+    transform: translate(200px, 100px) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes bubble-floating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: translate(50px, 50px);
+  }
+
+  50% {
+    transform: translate(100px, 60px) rotate(50deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(100px);
+  }
+}
+
+@keyframes bubble-around {
+  0% {
+    transform: translate(-100px, -100px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bubble-up {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translate(30px, -100px);
+  }
+
+  100% {
+    transform: translate(20px, -200px);
+  }
+}
+
+@keyframes bubble-down {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(10px, -50px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(30px, -100px);
+  }
+
+  75% {
+    transform: translate(40px, -75px);
+  }
+
+  100% {
+    transform: translate(20px, -100px) scale(1.4);
+  }
+}
+
+@keyframes bubble-slow {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-10px, -10px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  75% {
+    transform: translate(10px, 30px);
+  }
+
+  100% {
+    transform: translate(20px, 70px);
+  }
+}
+
+@keyframes bacteria-pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: translateX(-60px) scale(1.3);
+  }
+
+  55% {
+    transform: translate(-150px, 10px) scale(1.1);
+  }
+
+  70% {
+    transform: translate(-100px, 20px) rotate(10deg);
+  }
+
+  100% {
+    transform: translate(-200px, 50px) rotate(45deg);
+  }
+}
+
+@keyframes bacteria-zigzag {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: translate(50px, 50px);
+  }
+
+  50% {
+    transform: translate(100px, 60px) rotate(50deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(100px);
+  }
+}
+
+@keyframes bacteria-oval {
+  0% {
+    transform: rotate(0deg) translate(50px) rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(90deg) translate(80px) rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(120px) rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg) translate(80px) rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(50px) rotate(360deg);
+  }
+}
+
+@keyframes bacteria-float {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  25% {
+    transform: translateX(-50px) scale(1.1);
+  }
+
+  50% {
+    transform: translateX(0) scale(1);
+  }
+
+  75% {
+    transform: translateX(50px) scale(1.1);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes sperm-float {
+  0% {
+    opacity: 0;
+    transform: translate(200px, 100px) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
